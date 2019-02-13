@@ -1,0 +1,40 @@
+﻿header {
+    background-color: gray;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: lawngreen;
+}
+
+h3 {
+    color: lawngreen;
+}
+
+text {
+    color: lawngreen;
+}
+
+.listbox {
+    background-color: black;
+    color: lawngreen;
+}
+
+.textbox {
+    background-color: black;
+    border-color: white;
+    color: lawngreen;
+}
+
+.button {
+    background-color: black;
+    border-color: white;
+    color: lawngreen;
+}
+
+.centered_header {
+    text-align: center;
+}

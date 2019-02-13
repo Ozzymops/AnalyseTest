@@ -12,7 +12,8 @@ namespace TestAnalyse.Views
 {
     public partial class UF01 : System.Web.UI.Page
     {
-        public static int length = 800;
+        Logger l = new Logger();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,8 +22,8 @@ namespace TestAnalyse.Views
                 // Fill GridView
                 _BindGridView();
 
-                // Set timer
-                TimerBar.Attributes["style"] = "width: " + length.ToString() + "px"; // convert timer to javascript!
+                // Get max width
+                Session["barWidth"] = TimerBar.Attributes["title"];
             }
         }
 
@@ -73,11 +74,18 @@ namespace TestAnalyse.Views
 
         protected void Timer_Tick(object sender, EventArgs e)
         {
-            if (length > 0)
+            int newWidth = 0;
+            newWidth = Convert.ToInt32(Session["barWidth"]) - 25;
+
+            if (newWidth == 0)
             {
-                length -= 25;
+                newWidth = 0;
+                Timer.Enabled = false;
             }
-            TimerBar.Attributes["style"] = "width: " + length.ToString() + "px";
+
+            Session["barWidth"] = newWidth.ToString();
+            TimerBar.Attributes["style"] = "width: " + newWidth.ToString() + "px";
+            l.Write(newWidth.ToString());
         }
     }
 }

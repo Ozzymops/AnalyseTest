@@ -26,7 +26,6 @@ body {
 .timer_bar {
     background-color: orange;
     height: 100px;
-    vertical-align: middle;
     display: block;
     margin-left: auto;
     margin-right: auto;

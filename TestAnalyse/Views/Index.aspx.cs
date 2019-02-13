@@ -18,7 +18,11 @@ namespace TestAnalyse.Views
         {
             switch (e.Index)
             {
-                case 0: // UF-01
+                case 0: // ChatTest
+                    Response.Redirect("~/Views/ChatTest.aspx");
+                    break;
+
+                case 1: // UF-01
                     Response.Redirect("~/Views/UF01.aspx");
                     break;
             }
